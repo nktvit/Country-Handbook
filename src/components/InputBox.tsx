@@ -4,9 +4,10 @@ import { CiSearch } from "react-icons/ci";
 
 interface InputBoxProps {
     value?: string
+    classNames?: string
 }
 
-const InputBox: React.FC<InputBoxProps> = ({ value = "" }) => {
+const InputBox: React.FC<InputBoxProps> = ({ value = "", classNames }) => {
     const [inputText, setInputText] = useState(value)
     const [isInputFocused, setInputFocused] = useState(false);
 
@@ -31,7 +32,7 @@ const InputBox: React.FC<InputBoxProps> = ({ value = "" }) => {
     }
 
     return (
-        <div className={`bg-slate-100 border my-6 max-w-fit m-auto rounded-2xl md:rounded-3xl shadow-xl transition-colors ${isInputFocused ? "border-blue-600" : "border-gray-300"}`}>
+        <div className={`bg-slate-100 my-6 max-w-fit m-auto rounded-2xl md:rounded-3xl shadow-xl transition-colors ${isInputFocused ? "border border-blue-600" : "border-0.5 border-gray-300 hover:border-blue-600"} ${classNames}`}>
             <form onSubmit={e => handleSubmit(e)}>
                 <div className="flex items-center">
                     <input

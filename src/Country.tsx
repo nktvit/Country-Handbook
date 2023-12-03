@@ -65,31 +65,31 @@ const Country: React.FC<CountryProps> = ({ country }) => {
 
     if (loading) return <div className="min-h-screen text-center">Loading...</div>
     else if (data) return (
-        <main className="min-h-screen bg-slate-900 font-light">
+        <div className="min-h-screen bg-slate-900 font-light">
 
-            <div
-                className="fixed w-full flex justify-center items-center  bg-center bg-no-repeat bg-cover"
+            <header
+                className="z-10 h-[65vh] md:h-[55vh] w-full flex flex-col justify-center items-center bg-center bg-no-repeat bg-fixed bg-cover"
                 style={{
                     backgroundImage: `url('${data.image_url}')`,
-                    height: '50vh'
                 }}
             >
+                <InputBox value={country} classNames="fixed top-0 " />
+
                 <div className="text-center p-10"> { }
                     <h1 className="capitalize text-slate-100 text-5xl font-bold"
                         style={{
                             textShadow: `2px 2px 1px #a19494`
                         }}>
-                        {country}
+                        {country.toLowerCase()}
                     </h1>
                 </div>
-            </div>
+            </header>
 
 
 
-            <div className="absolute left-0 top-0 w-full md:px-12 flex flex-grow flex-col gap-64">
-                <InputBox value={country} />
-                <div className="container mx-auto flex flex-grow flex-col gap-8 px-4 text-slate-800">
-                    <div className="bg-slate-100 border-0.5 border-slate-200 px-8 py-5 rounded-lg shadow-lg">
+            <main className="z-30 w-full -mt-16 px-4 md:px-12 lg:px-20 xl:px-32 2xl:px-48">
+                <div className="container mx-auto flex flex-grow flex-col gap-8 text-slate-800">
+                    <div className="bg-slate-100 border-0.5 border-slate-200 px-8 py-5 md:px-12 md:py-8 rounded-lg shadow-lg">
                         <h2 className="font-bold text-xl mb-2">About</h2>
                         {isInfoFolded && data.info.length > 150
                             ? (
@@ -107,10 +107,10 @@ const Country: React.FC<CountryProps> = ({ country }) => {
                     <CountryDetails country={country}/>
                     
                 </div>
-            </div>
+            </main>
 
 
-        </main>
+        </div>
 
 
     );

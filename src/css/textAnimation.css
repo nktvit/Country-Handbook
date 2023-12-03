@@ -1,0 +1,16 @@
+/* Add this in your CSS file */
+.cursor {
+  display: inline-block;
+  vertical-align: sub;
+  margin-left: 0.20em; /* Small space between text and cursor */
+  width: 2px;
+  height: 1.35em; /* Adjust the height as needed */
+  background-color: rgb(31 41 55); /* Color of the cursor */
+  animation: blink 1.2s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    background-color: transparent;
+  }
+}

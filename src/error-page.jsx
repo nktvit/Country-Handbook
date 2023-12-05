@@ -11,6 +11,7 @@ export default function ErrorPage() {
         <p className="mt-2 text-md text-red-300 animate-fade-in-up">
           { error && <i>{error.statusText || error.message}</i>}
         </p>
+        <a href="/">Back to main page</a>
       </div>
     </div>
   );

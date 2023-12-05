@@ -1,6 +1,7 @@
 import InputBox from "./components/InputBox";
 import TypingText from "./components/TypingText";
-import PhotoCollage from "./components/PhotoCollage";
+import {lazy} from "react"
+const PhotoCollage = lazy(() => import("./components/PhotoCollage"));
 
 
 const App: React.FC = () => {

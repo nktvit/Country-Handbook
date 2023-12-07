@@ -27,17 +27,16 @@ const Navbar: React.FC<NavbarProps> = ({ country }) => {
         };
     }, []);
 
-    const navClass = `flex flex-row w-full fixed top-0 md:px-12 lg:px-20 xl:px-32 2xl:px-48 ${scrollBackground ? 'bg-yourColorClass' : ''}`;
 
     return (
-        <nav className={navClass}>
-            <div className="flex">
-                <a href="/" className="text-2xl m-auto bg-slate-100 p-2 rounded-full border-0.5 border-slate-200 transition-colors hover:border-blue-600 justify-self-start">
+        <nav className={`flex flex-row w-full fixed top-0 transition-colors px-2 md:px-12 lg:px-20 xl:px-32 2xl:px-48 ${scrollBackground ? 'bg-yellow-500/60 backdrop-blur-sm' : 'bg-transparent'}`}>
+            <div className="flex mr-3">
+                <a href="/" className="text-2xl m-auto bg-slate-100 p-2 rounded-full border-0.5 border-slate-200 transition-colors hover:border-indigo-700 justify-self-start">
                     <IoIosArrowBack />
                 </a>
             </div>
 
-            <InputBox value={country} classNames="justify-self-center" />
+            <InputBox value={country} classNames={`md:justify-self-center ${scrollBackground ? 'my-2' : ''}`} />
         </nav>
     );
 };

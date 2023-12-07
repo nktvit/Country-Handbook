@@ -53,10 +53,10 @@ const Gallery: React.FC<GalleryProps> = ({ images, heading, subheading, preventS
     };
 
     const renderGallery = () => (
-        <div className="flex flex-nowrap overflow-x-scroll">
+        <div className="flex flex-nowrap overflow-x-scroll" style={{scrollbarWidth: "thin"}}>
             {images.map((image, index) => (
                 <a className="mr-5 flex-none" key={index} href={image.imageUrl} onClick={(e) => openImgsViewer(index, e)}>
-                    <img src={image.imageUrl} alt={image.title} className="max-w-full h-auto  object-cover rounded-lg" />
+                    <img src={image.imageUrl} alt={image.title} className="max-w-full max-h-52 h-auto  object-cover rounded-lg" />
                 </a>
             ))}
         </div>

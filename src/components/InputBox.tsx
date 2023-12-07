@@ -7,6 +7,7 @@ interface InputBoxProps {
     classNames?: string
 }
 
+
 const InputBox: React.FC<InputBoxProps> = ({ value = "", classNames }) => {
     const [inputText, setInputText] = useState(value)
     const [isInputFocused, setInputFocused] = useState(false);
@@ -32,11 +33,11 @@ const InputBox: React.FC<InputBoxProps> = ({ value = "", classNames }) => {
     }
 
     return (
-        <div className={`bg-slate-100 my-6 max-w-fit m-auto rounded-2xl md:rounded-3xl shadow-xl transition-colors ${isInputFocused ? "border border-blue-600" : "border-0.5 border-gray-300 hover:border-blue-600"} ${classNames}`}>
+        <div className={`bg-slate-100 my-6 md:w-auto m-auto rounded-2xl md:rounded-3xl shadow-xl transition-colors ${isInputFocused ? "border border-blue-600" : "border-0.5 border-gray-300 hover:border-blue-600"} ${classNames}`}>
             <form onSubmit={e => handleSubmit(e)}>
                 <div className="flex items-center">
                     <input
-                        className="flex-grow rounded-l-2xl focus:outline-none caret-gray-600 text-slate-800 bg-transparent text-md md:text-2xl text-center h-8 md:h-16 uppercase"
+                        className="flex-grow flex-shrink rounded-l-2xl focus:outline-none caret-gray-600 text-slate-800 bg-transparent text-md md:text-2xl text-center h-8 md:h-16 uppercase"
                         spellCheck="false" placeholder="find country" type="text"
                         value={inputText}
                         onChange={e => handleInput(e.target.value)}
